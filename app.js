@@ -39,25 +39,27 @@
 //
 // console.log(person2.lastName);
 
-let currentCar = {
-  model: "Ford",
-  licensePLates: 'QNP444',
-  engine: '5.3',
-  color: 'red',
-  wheelSize: 24
-}
-
-console.log(currentCar.model);
-
-
-let name = 'Francisco';
-
-function myName(name) {
-
-  console.log(name);
-
-};
-myName(name)
+// let currentCar = {
+//   model: "Ford",
+//   licensePLates: 'QNP444',
+//   engine: '5.3',
+//   color: 'red',
+//   wheelSize: 24
+// }
+//
+// console.log(currentCar.model);
+//
+//
+// let name = 'Francisco';
+//
+// function myName(name) {
+//
+//
+//
+//   console.log(name);
+//
+// };
+// myName(name)
 
 
 
@@ -126,3 +128,9 @@ myName(name)
 // date = 'Thursday';
 //
 // function3();
+
+// class new Vehicle {
+//
+// }
+
+console.log('hi');

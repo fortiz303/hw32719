@@ -1,43 +1,61 @@
 <script>
 
-
-class Animal {
-
-
-  constructor(nameOfPet) {
-    this.petName = nameOfPet;
-  }
-
-  cry() {
-    console.log(this.petName + 'cries');
-  }
-
-  eat() {
-    console.log('eats');
-  }
-
-  run() {
-    console.log('runs away');
+class Vehicle {
+  constructor(make,model,year,color){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color
   }
 }
 
-let pet1= new Animal('garfield ');
+let car = new Vehicle('honda','accord','2011','silver');
 
-pet1.cry();
+class Car extends Vehicle {
+  constructor(make, model, year, color, licensePlate, wheelCount, cylinders, miles, fuelType, engineType) {
+    super(make, model, year, color);
+    this.licensePlate = licensePlate;
+    this.wheelCount = wheelCount;
+    this.engineType = engineType;
+    this.miles = miles;
+    this.fuelType = fuelType;
+  }
+}
 
+class Bicycle extends Vehicle {
+  constructor(make, model, year, color, gears, rimSize){
+    super(make, model, year, color);
+    this.rimSize = rimSize;
+    this.gears = gears;
+  }
+}
 
+class Helicopter extends Vehicle {
+  constructor(make, model, year, color, wingCount, wingSize){
+    super(make, model, year, color);
+    this.wingCount = wingCount;
+    this.wingSize = wingSize;
+  }
+}
+ class Jet extends Vehicle {
+   constructor(make, model, year, color, propellerSize, speedMPH){
+     super(make, model, year, color);
+     this.propellerSize = propellerSize;
+     this.speedMPH = speedMPH;
+   }
+ }
 
-//
-// let animal = {
-//   cry: function () {
-//     console.log('The animal cries');
-//   },
-//   eat: function () {
-//     console.log('the animal eats');
-//   },
-//   run: function () {
-//     console.log('the animal runs away');
-//   }
-// };
+let legitCar = new Car('wv', 'golf', 2001, 'silver', 'QNP444', '4', 'diesel', '50000', 'diesel');
+let legitCar2 = new Car('elio', 'one', '2019', 'red', 'WER345', 2, 3, 1000, 'gas');
+let newBike = new Bicycle('trek', '1000', 2009, 'red', 18, 24);
+let newHelicopter = new Helicopter('BigHeliMAKE', 'BigHeliMODEL', 2010, 'red', 15, '24 feet');
+let newJet = new Jet('BigJet MAKE','bigJetMODEL','2012','red',24,'35mph');
+
+console.log(legitCar.model);
+console.log(legitCar2.model);
+console.log(newBike.model);
+console.log(newHelicopter.wingSize)
+console.log(newJet.speedMPH);
+
 
 </script>
