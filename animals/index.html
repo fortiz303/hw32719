@@ -1,0 +1,75 @@
+<script>
+
+
+class Animal {
+  constructor(nameOfPet,address,owner,age) {
+    this.petId = Math.random() * 100000;
+    this.petName = nameOfPet;
+    this.address = address;
+    this.owner = owner;
+    this.age = age;
+    this.energy = 300;
+  }
+
+  getPetName() {
+    return this.petName;
+  }
+
+  setPetName(dataName) {
+    console.log('the name was changed');
+    this.petName = dataName;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  setAge(dataAge) {
+    console.log('this age was changed');
+    this.age = dataAge;
+  }
+
+  //petName --> getter will be called getPetName
+  //petName --> setter will be called setPetName
+
+  play() {
+    if (this.energy <= 0 ){
+      console.log(this.petName + ' is too tired to play');
+      console.log('Energy level is ' + this.energy)
+    } else {
+      console.log(this.petName + ' plays for a few minutes');
+      this.energy = this.energy - 100;
+      console.log('Energy level is ' + this.energy)
+    }
+  }
+
+  eat() {
+    if(this.energy > 200) {
+      console.log('your pet exploded.')
+    } else{
+      console.log(this.petName + ' ate a hearty meal');
+    }
+    this.energy = this.energy + 100;
+    console.log('Energy level is ' + this.energy)
+  }
+}
+
+let myPet = new Animal('Alex','123 Bernal Heights', 'Francisco', '01.08.2002');
+
+console.log(myPet.petName);
+console.log(myPet.play());
+
+myPet.setAge(10);
+
+myPet.play();
+myPet.play();
+myPet.play();
+myPet.play();
+myPet.eat();
+myPet.eat();
+myPet.eat();
+myPet.eat();
+
+// console.log(petName.play());
+
+</script>
