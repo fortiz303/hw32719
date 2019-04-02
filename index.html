@@ -1,5 +1,99 @@
 <script>
 
+// class Animal{
+//   constructor(nameOfPet,address,owner,age){
+//     this.petId = Math.random() * 100000;
+//     this.petName = nameOfPet;
+//     this.address = address;
+//     this.owner = owner;
+//     this.age = age;
+//   }
+//
+//   play() {
+//     console.log(this.petName + ' plays for a few minutes.');
+//   };
+//   runs() {
+//     console.log(this.petName + ' runs uncontrollably.');
+//   }
+//   home() {
+//     console.log(this.petName + ' lives in ' + this.address);
+//   }
+//   old() {
+//     console.log(this.petName + ' is ' + this.age + ' years old.');
+//   }
+//
+// }
+// class Dog extends Animal {
+//   constructor(loyalty, petName, address, owner, age){
+//     super(petName, address, owner, age);
+//     this.loyalty = 0;
+// }
+//
+//
+// //METHOD OVERRIDING
+//   play() {
+//     if (this.energy <= 0 ){
+//       console.log(this.petName + ' is too tired to play');
+//       console.log('Energy level is ' + this.energy)
+//     } else {
+//       console.log(this.petName + ' fetches for a few minutes');
+//       this.energy = this.energy - 100;
+//       this.loyalty = this.loyalty + 100;
+//       console.log('Energy level is ' + this.energy)
+//     }
+//   }
+//   bark() {
+//       console.log(this.petName + 'barks at evey1 in the hood');
+//   }
+// }
+// class Cat extends Animal {
+//   constructor(petName, address, owner, age){
+//     super(petName, address, owner, age);
+//   }
+//
+//   purr() {
+//     console.log(this.petName + ' purrs!');
+//   }
+//   eat() {
+//     console.log(this.petName + ' eats!')
+//   }
+// }
+//
+//
+//
+//
+// let myPet = new Animal('Alex', '123 Bernal Heights', 'Francisco', '01.08.2002');
+// let myDog = new Dog('batman','123 bernal','eduardo',6);
+// let myCat = new Cat('Curly','123 bernal','eduardo',4);
+//
+//
+// myPet.play();
+// myCat.purr();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Vehicle {
   constructor(make,model,year,color){
     this.make = make;
@@ -9,53 +103,43 @@ class Vehicle {
   }
 }
 
-let car = new Vehicle('honda','accord','2011','silver');
-
-class Car extends Vehicle {
-  constructor(make, model, year, color, licensePlate, wheelCount, cylinders, miles, fuelType, engineType) {
+class ElectricCar extends Vehicle {
+  constructor(make, model, year, color, batterySize, currentCharge, batteryAge) {
     super(make, model, year, color);
-    this.licensePlate = licensePlate;
-    this.wheelCount = wheelCount;
-    this.engineType = engineType;
-    this.miles = miles;
+    this.batterySize = batterySize;
+    this.currentCharge = currentCharge;
+    this.batteryAge = batteryAge;
+  }
+}
+
+class Truck extends Vehicle {
+  constructor(make, model, year, color, tankSize, fuelType, topSpeed){
+    super(make, model, year, color);
+    this.tankSize = tankSize;
     this.fuelType = fuelType;
+    this.topSpeed = topSpeed;
   }
 }
 
-class Bicycle extends Vehicle {
-  constructor(make, model, year, color, gears, rimSize){
+class Motorcycle extends Vehicle {
+  constructor(make, model, year, color, engineCC, tireSize, tankSize){
     super(make, model, year, color);
-    this.rimSize = rimSize;
-    this.gears = gears;
+    this.engineCC = engineCC;
+    this.tireSize = tireSize;
+    this.tankSize = tankSize;
   }
 }
 
-class Helicopter extends Vehicle {
-  constructor(make, model, year, color, wingCount, wingSize){
-    super(make, model, year, color);
-    this.wingCount = wingCount;
-    this.wingSize = wingSize;
-  }
-}
- class Jet extends Vehicle {
-   constructor(make, model, year, color, propellerSize, speedMPH){
-     super(make, model, year, color);
-     this.propellerSize = propellerSize;
-     this.speedMPH = speedMPH;
-   }
- }
 
-let legitCar = new Car('wv', 'golf', 2001, 'silver', 'QNP444', '4', 'diesel', '50000', 'diesel');
-let legitCar2 = new Car('elio', 'one', '2019', 'red', 'WER345', 2, 3, 1000, 'gas');
-let newBike = new Bicycle('trek', '1000', 2009, 'red', 18, 24);
-let newHelicopter = new Helicopter('BigHeliMAKE', 'BigHeliMODEL', 2010, 'red', 15, '24 feet');
-let newJet = new Jet('BigJet MAKE','bigJetMODEL','2012','red',24,'35mph');
+let myElectricCar = new ElectricCar('elio', 'one', '2019', 'red', '200v', '40hrs', '2 years');
+let myTruck = new Truck('ford', 'nissan', 2009, 'red', 'diesel', '130mph');
+let myMotorcyle = new Motorcycle('Harley', 'MOTOHELI','2015', 'red', '120cc', '24 tiresize', '22tankSize');
 
-console.log(legitCar.model);
-console.log(legitCar2.model);
-console.log(newBike.model);
-console.log(newHelicopter.wingSize)
-console.log(newJet.speedMPH);
+
+console.log(myElectricCar.model);
+console.log(myTruck.model);
+console.log(myMotorcyle.model)
+
 
 
 </script>

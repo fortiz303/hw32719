@@ -11,17 +11,32 @@ class Animal {
     this.energy = 300;
   }
 
-  getPetName() {
+  setPetName(dataPetName){
+    this.petName = dataPetName;
+  }
+
+  getPetName(){
     return this.petName;
   }
 
-  setPetName(dataName) {
-    console.log('the name was changed');
-    this.petName = dataName;
+  setPetAddress(dataPetAddress){
+    this.adress = dataPetAddress;
+  }
+
+  getPetAddress(){
+    return this.address;
   }
 
   getAge() {
     return this.age;
+  }
+
+  setOwner(data) {
+    this.owner = data;
+  }
+
+  getOwner(){
+    return this.owner;
   }
 
   setAge(dataAge) {
@@ -29,17 +44,15 @@ class Animal {
     this.age = dataAge;
   }
 
-  //petName --> getter will be called getPetName
-  //petName --> setter will be called setPetName
 
   play() {
     if (this.energy <= 0 ){
       console.log(this.petName + ' is too tired to play');
-      console.log('Energy level is ' + this.energy)
+      console.log('Energy level is ' + this.energy);
     } else {
       console.log(this.petName + ' plays for a few minutes');
       this.energy = this.energy - 100;
-      console.log('Energy level is ' + this.energy)
+      console.log('Energy level is ' + this.energy);
     }
   }
 
@@ -54,13 +67,33 @@ class Animal {
   }
 }
 
+class Cat extends Animal{
+  constructor(petName, address, owner, age){
+    super (petName, address, owner, age)
+  }
+  purr(){
+    console.log(this.pet);
+  }
+}
+
 let myPet = new Animal('Alex','123 Bernal Heights', 'Francisco', '01.08.2002');
+let myCat = new Animal('curly','123 bern','Eduardooo',3)
+
+//Cat
+console.log(myCat.purrs());
+
 
 console.log(myPet.petName);
-console.log(myPet.play());
+console.log(myPet.getPetName());
+console.log(myPet.getOwner());
+console.log(myPet.getPetAddress());
 
+myPet.setPetAddress('arthur');
+myPet.setPetName('pupper');
 myPet.setAge(10);
+myPet.setOwner('francisco');
 
+myPet.play();
 myPet.play();
 myPet.play();
 myPet.play();

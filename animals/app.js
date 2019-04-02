@@ -24,8 +24,32 @@ class Animal{
   }
 
 }
+class Dog extends Animal {
+  constructor(loyalty, petName, adress, owner, age){
+    super(petName, adress, owner, age);
+    this.loyalty = 0;
+  }
+
+//METHOD OVERRIDING
+  play() {
+    if (this.energy <= 0 ){
+      console.log(this.petName + ' is too tired to play');
+      console.log('Energy level is ' + this.energy)
+    } else {
+      console.log(this.petName + ' fetches for a few minutes');
+      this.energy = this.energy - 100;
+      this.loyalty = this.loyalty + 100;
+      console.log('Energy level is ' + this.energy)
+    }
+    bark() {
+      console.log(this.petName + 'barks at evey1 in the hood');
+    }
+  }
+
+
 
 let myPet = new Animal('Alex','123 Bernal Heights', 'Francisco', '01.08.2002');
+let myDog = new Dog('batman','123 bernal','eduardo',6)
 
 console.log(myPet.petName);
 petName.play();
